@@ -1,4 +1,4 @@
-game-of-life
+Game of life
 ============
 
-Game of life in perl
+Game of life in perl.
