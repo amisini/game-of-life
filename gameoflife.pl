@@ -51,12 +51,12 @@ sub main {
     my ($rows, $columns, $iterations) = @_;
     my @board = generate_board($rows, $columns, 1); #generates a radom board of 0 and 1
     foreach (1..$iterations) {
-        my @next = generate_board($rows, $columns, 0); #generates a board with all 0
+        my @next = generate_board($rows, $columns, 0); #generates the next board with all 0
         print_board(@board);
         foreach my $row (0 .. $rows - 1) {
             foreach my $column (0 .. $columns - 1) {
                 my $neighbors = neighbor_numbers($row, $rows, $column, $columns, \@board);
-                #udate the next board if for 2 or 3 neighbors
+                #udate the next board
                 $next[$row][$column] = $board[$row][$column] & ($neighbors == 2) | ($neighbors == 3);
             }
         }        
