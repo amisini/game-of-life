@@ -42,7 +42,7 @@ If you use OS X or Linux use: system("clear");
 =cut
 sub print_board {
     system("cls");
-    print +(join '', @$_).$/ foreach @_;
+    print + (join '', @$_).$/ foreach @_;
     sleep $delay;
 }
 
@@ -56,7 +56,6 @@ sub main {
         foreach my $row (0 .. $rows - 1) {
             foreach my $column (0 .. $columns - 1) {
                 my $neighbors = neighbor_numbers($row, $rows, $column, $columns, \@board);
-                #udate the next board
                 $next[$row][$column] = $board[$row][$column] & ($neighbors == 2) | ($neighbors == 3);
             }
         }        
